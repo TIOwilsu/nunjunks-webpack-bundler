@@ -1,6 +1,7 @@
 const path = require('path',);
 
 // Source and dist directories
+const DIR = path.dirname(__dirname,);
 const SOURCE_DIR = path.join(__dirname, 'src',);
 const DIST_DIR = path.join(__dirname, 'dist',);
 
@@ -25,6 +26,7 @@ const isProduction = (mode,) => mode === 'production';
 const isServer = (command,) => command === 'server';
 
 module.exports = {
+  DIR,
   SOURCE_DIR,
   DIST_DIR,
   VIEWS_DIR,

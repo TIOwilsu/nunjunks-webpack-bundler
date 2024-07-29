@@ -16,7 +16,7 @@ const {
 
 const config = {
   resolve: {
-    extensions: ['.js', '.ts',],
+    extensions: ['.js',],
     alias: {
       '@assets': ASSETS_DIR,
       '@scripts': SCRIPTS_DIR,
