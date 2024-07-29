@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": ".prettier.config.js",
+  "[javascript][html]": {
+    "editor.defaultFormatter": null
+  },
+  "eslint.enable": true,
+  "eslint.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.js"
+  },
+  "eslint.validate": ["javascript", "html", "scss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  }
+}
