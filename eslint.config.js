@@ -4,10 +4,8 @@ const js = require('@eslint/js');
 const scss = require('stylelint-scss');
 const standardScss = require('stylelint-config-standard-scss');
 const prettier = require('eslint-plugin-prettier');
-const jsonc = require('eslint-plugin-jsonc');
 const prettierConfig = require('eslint-config-prettier');
 const { FlatCompat } = require('@eslint/eslintrc');
-
 const { DIR } = require('./webpack.helpers');
 
 const COMPAT_JS = new FlatCompat({
@@ -34,7 +32,7 @@ module.exports = [
     },
   },
   {
-    files: ['**/*.{scss,json}'],
+    files: ['**/*.scss'],
     plugins: {
       prettier: prettier,
     },
@@ -110,14 +108,5 @@ module.exports = [
   {
     files: ['**/*.css'],
     extends: ['stylelint-config-standard'],
-  },
-  {
-    files: ['**/*.json', '**/*.jsonc'],
-    languageOptions: {
-      parser: jsonc.parsers.jsonc,
-    },
-    plugins: {
-      jsonc,
-    },
-  },
+  }
 ];
