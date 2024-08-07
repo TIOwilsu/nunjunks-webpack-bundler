@@ -1,120 +1,223 @@
 $utilities: (
-    "display": (responsive: true,
-        print: true,
-        property: display,
-        class: d,
-        values: block flex none inline-block inline grid),
-    "align-self": (responsive: true,
-        property: align-self,
-        class: align-self,
-        values: start center end),
-    // Margin  utilities
-    "margin": (responsive: true,
-        property: margin,
-        class: m,
-        values: map-merge($spacers, (auto: auto))),
-    "margin-x": (responsive: true,
-        property: margin-right margin-left,
-        class: mx,
-        values: map-merge($spacers, (auto: auto))),
-    "margin-y": (responsive: true,
-        property: margin-top margin-bottom,
-        class: my,
-        values: map-merge($spacers, (auto: auto))),
-    "margin-top": (responsive: true,
-        property: margin-top,
-        class: mt,
-        values: map-merge($spacers, (auto: auto))),
-    "margin-end": (responsive: true,
-        property: margin-right,
-        class: me,
-        values: map-merge($spacers, (auto: auto))),
-    "margin-bottom": (responsive: true,
-        property: margin-bottom,
-        class: mb,
-        values: map-merge($spacers, (auto: auto))),
-    "margin-start": (responsive: true,
-        property: margin-left,
-        class: ms,
-        values: map-merge($spacers, (auto: auto))),
-    // Padding utilities
-    "padding": (responsive: true,
-        property: padding,
-        class: p,
-        values: $spacers ),
-    "padding-x": (responsive: true,
-        property: padding-right padding-left,
-        class: px,
-        values: $spacers ),
-    "padding-y": (responsive: true,
-        property: padding-top padding-bottom,
-        class: py,
-        values: $spacers ),
-    "padding-top": (responsive: true,
-        property: padding-top,
-        class: pt,
-        values: $spacers ),
-    "padding-end": (responsive: true,
-        property: padding-right,
-        class: pe,
-        values: $spacers ),
-    "padding-bottom": (responsive: true,
-        property: padding-bottom,
-        class: pb,
-        values: $spacers ),
-    "padding-start": (responsive: true,
-        property: padding-left,
-        class: ps,
-        values: $spacers ),
-    //Flexbox utilities
-    "justify-content": (responsive: true,
-        print: true,
-        property: justify-content,
-        class: justify-content,
-        values: center space-between flex-end flex-start),
-    "align-items": (responsive: true,
-        property: align-items,
-        values: (start: flex-start,
-            end: flex-end,
-            center: center,
-            baseline: baseline,
-            stretch: stretch,
-        )),
-    "flex-wrap": (responsive: true,
-        property: flex-wrap,
-        class: flex,
-        values: wrap nowrap wrap-reverse),
-    // Text utilities
-    "text-transform": (property: text-transform,
-        class: text,
-        values: lowercase uppercase capitalize),
-    "width": (property: width,
-        class: w,
-        values: (25: 25%,
-            50: 50%,
-            75: 75%,
-            100: 100%,
-            auto: auto)),
-    "height": (property: height,
-        class: h,
-        values: (25: 25%,
-            50: 50%,
-            75: 75%,
-            100: 100%,
-            auto: auto)),
-    "flex-direction": (responsive: true,
-        property: flex-direction,
-        class: flex,
-        values: row column row-reverse column-reverse),
-    "text-decoration": (property: text-decoration,
-        values: none underline line-through),
-    "font-weight": (property: font-weight,
-        class: fw,
-        values: (lighter: $font-weight-lighter,
-            light: $font-weight-light,
-            normal: $font-weight-normal,
-            medium: $font-weight-medium,
-            semibold: $font-weight-semibold,
-            bold: $font-weight-bold,
-            bolder: $font-weight-bolder )),
+  "display": (
+    responsive: true,
+    print: true,
+    property: display,
+    class: d,
+    values: block flex none inline-block inline grid,
+  ),
+  "align-self": (
+    responsive: true,
+    property: align-self,
+    class: align-self,
+    values: start center end,
+  ),
+  // Margin  utilities
+  "margin":
+    (
+      responsive: true,
+      property: margin,
+      class: m,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+  "margin-x": (
+    responsive: true,
+    property: margin-right margin-left,
+    class: mx,
+    values:
+      map-merge(
+        $spacers,
+        (
+          auto: auto,
+        )
+      ),
+  ),
+  "margin-y": (
+    responsive: true,
+    property: margin-top margin-bottom,
+    class: my,
+    values:
+      map-merge(
+        $spacers,
+        (
+          auto: auto,
+        )
+      ),
+  ),
+  "margin-top": (
+    responsive: true,
+    property: margin-top,
+    class: mt,
+    values:
+      map-merge(
+        $spacers,
+        (
+          auto: auto,
+        )
+      ),
+  ),
+  "margin-end": (
+    responsive: true,
+    property: margin-right,
+    class: me,
+    values:
+      map-merge(
+        $spacers,
+        (
+          auto: auto,
+        )
+      ),
+  ),
+  "margin-bottom": (
+    responsive: true,
+    property: margin-bottom,
+    class: mb,
+    values:
+      map-merge(
+        $spacers,
+        (
+          auto: auto,
+        )
+      ),
+  ),
+  "margin-start": (
+    responsive: true,
+    property: margin-left,
+    class: ms,
+    values:
+      map-merge(
+        $spacers,
+        (
+          auto: auto,
+        )
+      ),
+  ),
+  // Padding utilities
+  "padding":
+    (
+      responsive: true,
+      property: padding,
+      class: p,
+      values: $spacers,
+    ),
+  "padding-x": (
+    responsive: true,
+    property: padding-right padding-left,
+    class: px,
+    values: $spacers,
+  ),
+  "padding-y": (
+    responsive: true,
+    property: padding-top padding-bottom,
+    class: py,
+    values: $spacers,
+  ),
+  "padding-top": (
+    responsive: true,
+    property: padding-top,
+    class: pt,
+    values: $spacers,
+  ),
+  "padding-end": (
+    responsive: true,
+    property: padding-right,
+    class: pe,
+    values: $spacers,
+  ),
+  "padding-bottom": (
+    responsive: true,
+    property: padding-bottom,
+    class: pb,
+    values: $spacers,
+  ),
+  "padding-start": (
+    responsive: true,
+    property: padding-left,
+    class: ps,
+    values: $spacers,
+  ),
+  //Flexbox utilities
+  "justify-content":
+    (
+      responsive: true,
+      print: true,
+      property: justify-content,
+      class: justify-content,
+      values: center space-between flex-end flex-start,
+    ),
+  "align-items": (
+    responsive: true,
+    property: align-items,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+      stretch: stretch,
+    ),
+  ),
+  "flex-wrap": (
+    responsive: true,
+    property: flex-wrap,
+    class: flex,
+    values: wrap nowrap wrap-reverse,
+  ),
+  // Text utilities
+  "text-transform":
+    (
+      property: text-transform,
+      class: text,
+      values: lowercase uppercase capitalize,
+    ),
+  "width": (
+    property: width,
+    class: w,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+    ),
+  ),
+  "height": (
+    property: height,
+    class: h,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+    ),
+  ),
+  "flex-direction": (
+    responsive: true,
+    property: flex-direction,
+    class: flex,
+    values: row column row-reverse column-reverse,
+  ),
+  "text-decoration": (
+    property: text-decoration,
+    values: none underline line-through,
+  ),
+  "font-weight": (
+    property: font-weight,
+    class: fw,
+    values: (
+      lighter: $font-weight-lighter,
+      light: $font-weight-light,
+      normal: $font-weight-normal,
+      medium: $font-weight-medium,
+      semibold: $font-weight-semibold,
+      bold: $font-weight-bold,
+      bolder: $font-weight-bolder,
+    ),
+  ),
 );
