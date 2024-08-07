@@ -8,10 +8,11 @@
     "build": "webpack --config webpack.config.js --mode=production",
     "server": "webpack --env command=server && npm run rebuild",
     "preview": "npm run build && npm run server",
-    "test": "cypress run",
-    "lint": "npx eslint --config eslint.config.js",
-    "lint:fix": "npx eslint --config './eslint.config.js' --fix --ext .js,.html,.scss,.json",
-    "font": "node fontfacegen.config.js"
+    "font": "node fontfacegen.config.js",
+    "format": "npx prettier --write **/*.json src/views/**/*.scss src/assets/styles/*.scss src/assets/styles/**/*.scss src/assets/styles/**/**/*.scss",
+    "lint": "npx eslint",
+    "lint:fix": "npx eslint --fix",
+    "test": "cypress run"
   },
   "author": "Wilson Queiroz Rocha",
   "license": "ISC",
@@ -26,28 +27,36 @@
     "html-bundler-webpack-plugin"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.7.0",
     "@html-eslint/eslint-plugin": "^0.25.0",
     "@html-eslint/parser": "^0.25.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^7.1.2",
     "cypress": "^13.13.1",
     "eslint": "^9.7.0",
-    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-html": "^8.1.1",
-    "eslint-plugin-prettier": "^5.2.1",
     "fontfacegen": "^0.2.1",
     "html-bundler-webpack-plugin": "^3.15.1",
+    "husky": "^9.1.4",
     "nodemon": "^3.1.4",
     "nunjucks": "^3.2.4",
     "sass": "^1.77.8",
     "sass-loader": "^14.2.1",
-    "stylelint-config-standard-scss": "^13.1.0",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
     "bootstrap": "^5.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.html": "eslint --fix",
+    "*.json": "prettier --write",
+    "*.scss": "prettier --write"
   }
 }
