@@ -1,58 +1,32 @@
 /// <reference types="cypress" />
+/* global cy, context, beforeEach, it */
 
 context('Navigation', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8080',);
   },);
 
-  it('is homepage', () => {
-    cy.get('.page-title',).should('contain', 'HOME',);
-    cy.location('pathname',).should('equal', '/',);
+  it('renders landing page sections', () => {
+    cy.get('#hero',).should('be.visible',);
+    cy.get('#depoimentos',).should('be.visible',);
+    cy.get('#faq',).should('be.visible',);
+    cy.get('#rodape',).should('be.visible',);
   },);
 
-  it('opens home page', () => {
-    cy.get('body > nav > ul',).contains('Home',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/index.html',);
-    cy.get('.page-title',).should('contain', 'HOME',);
+  it('navigates with header links', () => {
+    cy.get('header .nav-link[href="#depoimentos"]',).click();
+    cy.location('hash',).should('equal', '#depoimentos',);
+
+    cy.get('header .nav-link[href="#faq"]',).click();
+    cy.location('hash',).should('equal', '#faq',);
   },);
 
-  it('opens about page', () => {
-    cy.get('body > nav > ul',).contains('About',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/about.html',);
-    cy.get('.page-title',).should('contain', 'ABOUT',);
-  },);
-
-  it('opens contacts page', () => {
-    cy.get('body > nav > ul',).contains('Contacts',).click();
-    cy.location('pathname', { timeout: 10000, },).should('equal', '/contacts.html',);
-    cy.get('.page-title',).should('contain', 'CONTACTS',);
-  },);
-
-  it('navigation: home > about > home', () => {
-    cy.get('body > nav > ul',).contains('About',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/about.html',);
-    cy.get('body > nav > ul',).contains('Home',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/index.html',);
-  },);
-
-  it('navigation: home > about > contacts', () => {
-    cy.get('body > nav > ul',).contains('About',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/about.html',);
-    cy.get('body > nav > ul',).contains('Contacts',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/contacts.html',);
-  },);
-
-  it('navigation: home > contacts > home', () => {
-    cy.get('body > nav > ul',).contains('Contacts',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/contacts.html',);
-    cy.get('body > nav > ul',).contains('Home',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/index.html',);
-  },);
-
-  it('navigation: home > contacts > about', () => {
-    cy.get('body > nav > ul',).contains('Contacts',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/contacts.html',);
-    cy.get('body > nav > ul',).contains('About',).click();
-    cy.location('pathname', { timeout: 10000, },).should('contain', '/about.html',);
+  it('opens and closes mobile side menu', () => {
+    cy.viewport('iphone-8',);
+    cy.get('header button[aria-label="Abrir menu lateral"]',).filter(':visible',).first().click();
+    cy.get('#mobileNavigation',).should('have.class', 'show',);
+    cy.get('#mobileNavigation a[href="#faq"]',).should('be.visible',);
+    cy.get('#mobileNavigation button[aria-label="Fechar"]',).click();
+    cy.get('#mobileNavigation',).should('not.have.class', 'show',);
   },);
 },);

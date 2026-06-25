@@ -1,2 +1,88 @@
 @import "@styles";
 @import "@partials/header/header.scss";
+
+.home {
+  scroll-behavior: smooth;
+}
+
+#hero,
+#depoimentos,
+#faq,
+#rodape {
+  scroll-margin-top: 5.5rem;
+}
+
+.hero-section {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.hero-media {
+  min-height: 380px;
+  color: $white;
+}
+
+.testimonial-card {
+  width: 100%;
+  max-width: 760px;
+  background: linear-gradient(145deg, rgba($gray-900, 0.98), rgba($gray-800, 0.92));
+  border: 1px solid rgba($primary, 0.3);
+}
+
+.testimonial-quote {
+  color: rgba($primary, 0.85);
+}
+
+.testimonial-comment {
+  line-height: 1.45;
+}
+
+.testimonial-rating {
+  color: #ffc107;
+  letter-spacing: 0.15rem;
+  font-size: 0.95rem;
+}
+
+.testimonial-avatar {
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($primary, 0.2);
+  border: 1px solid rgba($primary, 0.4);
+  color: $white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+}
+
+.carousel-indicators {
+  position: static;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: auto;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+
+  .testimonial-comment {
+    font-size: 1.2rem;
+  }
+}

@@ -1,6 +1,30 @@
-.bootstrap-logo {
-  background-color: $white;
-  height: 32px;
-  width: 40px;
-  mask-image: url(@images/logos/bootstrap.svg);
+.landing-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: rgba($gray-900, 0.96);
+  border-color: rgba($white, 0.18) !important;
+  backdrop-filter: blur(8px);
+}
+
+.landing-header .offcanvas {
+  width: min(85vw, 320px);
+}
+
+.landing-header .navbar-brand {
+  color: $white;
+}
+
+.landing-header .navbar-brand:hover,
+.landing-header .navbar-brand:focus-visible {
+  color: tint-color($primary, 30%);
+}
+
+.landing-header .nav-link {
+  color: rgba($white, 0.9);
+}
+
+.landing-header .nav-link:hover,
+.landing-header .nav-link:focus-visible {
+  color: $white;
 }

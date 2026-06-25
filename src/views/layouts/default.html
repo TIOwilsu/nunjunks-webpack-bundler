@@ -11,7 +11,7 @@
 
   <body class="{{ page }}">
     {% if page != "login" %} {% include "src/views/partials/header/header.html"
-    %} {% endif %}
+    %} {% include "src/views/partials/header/mobile-navigation.html" %} {% endif %}
 
     <!-- block for specific page content -->
     {% block content %}{% endblock %} {% if page != "login" %} {% include
