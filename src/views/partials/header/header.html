@@ -1,49 +1,33 @@
-<header class="py-3 mb-3 border-bottom">
-  <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr">
-    <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-      <span class="bootstrap-logo mask-image me-2"></span>
-    </a>
+<header class="landing-header border-bottom border-secondary-subtle">
+  <nav class="navbar py-3" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-uppercase" href="#hero">Nunjunks</a>
 
-    <div class="d-flex align-items-center">
-      <form class="w-100 me-3" role="search">
-        <input
-          type="search"
-          class="form-control"
-          placeholder="Search..."
-          aria-label="Search"
-        >
-      </form>
-
-      <div class="flex-shrink-0 dropdown">
-        <a
-          href="#"
-          class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://github.com/mdo.png"
-            alt="mdo"
-            width="32"
-            height="32"
-            class="rounded-circle"
-          >
-        </a>
-        <ul class="dropdown-menu text-small shadow" style="">
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
+      <div class="d-flex align-items-center gap-3 ms-auto">
+        <ul class="navbar-nav d-none d-lg-flex flex-row gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#hero">Início</a>
           </li>
-          <li>
-            <a class="dropdown-item" href="#">Profile</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#depoimentos">Depoimentos</a>
           </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="login.html">Sign out</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">FAQ</a>
           </li>
         </ul>
+        <a class="btn btn-primary d-none d-lg-inline-flex" href="#faq">Começar agora</a>
+        <button
+          class="btn btn-outline-light d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNavigation"
+          aria-controls="mobileNavigation"
+          aria-label="Abrir menu lateral"
+        >
+          Menu
+        </button>
       </div>
     </div>
-  </div>
+  </nav>
+
 </header>

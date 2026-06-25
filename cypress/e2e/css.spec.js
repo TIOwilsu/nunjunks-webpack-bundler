@@ -1,19 +1,18 @@
 /// <reference types="cypress" />
+/* global cy, context, beforeEach, it */
 
 context('CSS', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8080',);
   },);
 
-
-  it('homepage colours', () => {
+  it('applies landing visual styles', () => {
     cy.get('body',).
       should('have.css', 'background-color', 'rgb(33, 37, 41)',);
-    cy.get('.page-title',).
+    cy.get('.landing-header .nav-link',).
+      first().
+      should('have.css', 'color', 'rgba(255, 255, 255, 0.9)',);
+    cy.get('.testimonial-card h3',).
       should('have.css', 'color', 'rgb(222, 226, 230)',);
-    cy.get('.page-title',).
-      should('have.css', 'color', 'rgb(222, 226, 230)',); 
-    cy.get('.card h3',).
-      should('have.css', 'color', 'rgb(255, 255, 255)',);
   },);
 },);

@@ -101,11 +101,6 @@ const config = {
           filename: 'index.html',
           data: { title: 'Home page', page: 'home', },
         },
-        {
-          import: path.join(PAGES_DIR, 'login', 'login.html',),
-          filename: 'login.html',
-          data: { title: 'Login page', page: 'login', },
-        },
       ],
       js: {
         filename: 'assets/scripts/[name].[contenthash:8].js',
@@ -119,6 +114,10 @@ const config = {
         sources: [
           {
             tag: 'div',
+            attributes: ['style',],
+          },
+          {
+            tag: 'article',
             attributes: ['style',],
           },
         ],

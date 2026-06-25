@@ -1,141 +1,245 @@
-{% extends "src/views/layouts/default.html" %} {% block styles %}
+{% extends "src/views/layouts/default.html" %}
+
+{% block styles %}
 <link href="@pages/home/home.scss" rel="stylesheet"/>
-{% endblock %} {% block scripts %}
+{% endblock %}
+
+{% block scripts %}
 <script src="@pages/home/home.js"></script>
-{% endblock %} {% block content %}
-<main>
-  <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="page-title pb-2 border-bottom">Custom cards</h2>
+{% endblock %}
 
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div class="col">
-        <div class="card cover-image h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="
-            background-image: url(@images/backgrounds/unsplash-photo-1.jpg);
-          ">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-              Short title, long jacket
-            </h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img
-                  src="https://github.com/twbs.png"
-                  alt="Bootstrap"
-                  width="32"
-                  height="32"
-                  class="rounded-circle border border-white"
-                />
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg
-                  class="bi me-2"
-                  width="1em"
-                  height="1em"
-                >
-                  <use xlink:href="#geo-fill"></use>
-                </svg>
-                <small>Earth</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg
-                  class="bi me-2"
-                  width="1em"
-                  height="1em"
-                >
-                  <use xlink:href="#calendar3"></use>
-                </svg>
-                <small>3d</small>
-              </li>
-            </ul>
+{% block content %}
+<main class="home">
+  <section id="hero" class="hero-section py-5 py-lg-6">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge text-bg-primary mb-3">Template responsivo</span>
+          <h1 class="display-4 fw-bold mb-3">A landing page pronta para converter visitantes em clientes.</h1>
+          <p class="lead text-body-secondary mb-4">
+            Estrutura moderna com sessões essenciais para apresentar valor, construir confiança e responder dúvidas.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-primary btn-lg" href="#depoimentos">Ver depoimentos</a>
+            <a class="btn btn-outline-light btn-lg" href="#faq">Tirar dúvidas</a>
           </div>
         </div>
+        <div class="col-lg-6">
+          <article class="hero-media card border-0 shadow-lg cover-image" style="background-image: linear-gradient(135deg, rgba(13, 110, 253, 0.65), rgba(111, 66, 193, 0.55)), url(@images/backgrounds/unsplash-photo-3.jpg);">
+            <div class="card-body d-flex flex-column justify-content-end p-4 p-lg-5 text-white">
+              <p class="mb-2 fw-semibold">Resultados comprovados</p>
+              <h2 class="h3 mb-0">+42% de aumento na geração de leads em 90 dias.</h2>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="col">
-        <div class="card cover-image h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="
-            background-image: url(@images/backgrounds/unsplash-photo-2.jpg);
-          ">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-              Much longer title that wraps to multiple lines
-            </h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img
-                  src="https://github.com/twbs.png"
-                  alt="Bootstrap"
-                  width="32"
-                  height="32"
-                  class="rounded-circle border border-white"
-                />
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg
-                  class="bi me-2"
-                  width="1em"
-                  height="1em"
-                >
-                  <use xlink:href="#geo-fill"></use>
-                </svg>
-                <small>Pakistan</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg
-                  class="bi me-2"
-                  width="1em"
-                  height="1em"
-                >
-                  <use xlink:href="#calendar3"></use>
-                </svg>
-                <small>4d</small>
-              </li>
-            </ul>
-          </div>
+    </div>
+  </section>
+
+  <section id="depoimentos" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-8">
+          <h2 class="h1 mb-3">Depoimentos de clientes</h2>
+          <p class="text-body-secondary mb-0">Provas reais de impacto com equipes e negócios de diferentes segmentos.</p>
         </div>
       </div>
 
-      <div class="col">
-        <div class="card cover-image h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="
-            background-image: url(@images/backgrounds/unsplash-photo-3.jpg);
-          ">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-              Another longer title belongs here
-            </h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img
-                  src="https://github.com/twbs.png"
-                  alt="Bootstrap"
-                  width="32"
-                  height="32"
-                  class="rounded-circle border border-white"
-                />
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg
-                  class="bi me-2"
-                  width="1em"
-                  height="1em"
+      <div
+        id="testimonialsCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <article class="testimonial-card card border-0 shadow-lg mx-auto rounded-4">
+              <div class="card-body p-4 p-lg-5">
+                <span class="testimonial-quote display-4 fw-bold lh-1 mb-3 d-inline-block">“</span>
+                <p class="testimonial-comment fs-4 mb-4">
+                  Em poucas semanas conseguimos organizar nossa comunicação e dobrar as oportunidades qualificadas.
+                </p>
+                <div class="testimonial-rating mb-4" aria-label="Avaliação cinco de cinco estrelas">
+                  <span aria-hidden="true">★ ★ ★ ★ ★</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="testimonial-avatar rounded-circle fw-semibold">CM</span>
+                  <div>
+                    <h3 class="h5 mb-1">Carla Mendes</h3>
+                    <p class="text-body-secondary mb-0">Head de Marketing, Orion Tech</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="carousel-item">
+            <article class="testimonial-card card border-0 shadow-lg mx-auto rounded-4">
+              <div class="card-body p-4 p-lg-5">
+                <span class="testimonial-quote display-4 fw-bold lh-1 mb-3 d-inline-block">“</span>
+                <p class="testimonial-comment fs-4 mb-4">
+                  A estrutura da página ficou clara para o usuário e nossas taxas de clique cresceram de forma consistente.
+                </p>
+                <div class="testimonial-rating mb-4" aria-label="Avaliação cinco de cinco estrelas">
+                  <span aria-hidden="true">★ ★ ★ ★ ★</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="testimonial-avatar rounded-circle fw-semibold">RL</span>
+                  <div>
+                    <h3 class="h5 mb-1">Rafael Lima</h3>
+                    <p class="text-body-secondary mb-0">Product Manager, Nova Labs</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="carousel-item">
+            <article class="testimonial-card card border-0 shadow-lg mx-auto rounded-4">
+              <div class="card-body p-4 p-lg-5">
+                <span class="testimonial-quote display-4 fw-bold lh-1 mb-3 d-inline-block">“</span>
+                <p class="testimonial-comment fs-4 mb-4">
+                  Foi simples adaptar o template ao nosso branding e manter alta performance em dispositivos móveis.
+                </p>
+                <div class="testimonial-rating mb-4" aria-label="Avaliação cinco de cinco estrelas">
+                  <span aria-hidden="true">★ ★ ★ ★ ★</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="testimonial-avatar rounded-circle fw-semibold">JC</span>
+                  <div>
+                    <h3 class="h5 mb-1">Julia Costa</h3>
+                    <p class="text-body-secondary mb-0">UX Lead, Pulse Creative</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#testimonialsCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Depoimento 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#testimonialsCarousel"
+            data-bs-slide-to="1"
+            aria-label="Depoimento 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#testimonialsCarousel"
+            data-bs-slide-to="2"
+            aria-label="Depoimento 3"
+          ></button>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#testimonialsCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#testimonialsCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center mb-4 text-center">
+        <div class="col-lg-8">
+          <h2 class="h1 mb-3">Perguntas frequentes</h2>
+          <p class="text-body-secondary mb-0">Respostas rápidas para as dúvidas mais comuns antes da contratação.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqOne"
+                  aria-expanded="true"
+                  aria-controls="faqOne"
                 >
-                  <use xlink:href="#geo-fill"></use>
-                </svg>
-                <small>California</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg
-                  class="bi me-2"
-                  width="1em"
-                  height="1em"
+                  O template já é responsivo para mobile e desktop?
+                </button>
+              </h3>
+              <div
+                id="faqOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Sim. A estrutura usa grid e componentes responsivos do Bootstrap para diferentes tamanhos de tela.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqTwo"
+                  aria-expanded="false"
+                  aria-controls="faqTwo"
                 >
-                  <use xlink:href="#calendar3"></use>
-                </svg>
-                <small>5d</small>
-              </li>
-            </ul>
+                  É possível personalizar cores, fontes e textos?
+                </button>
+              </h3>
+              <div
+                id="faqTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Totalmente. O conteúdo foi organizado em sessões e classes reutilizáveis para facilitar ajustes de branding.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqThree"
+                  aria-expanded="false"
+                  aria-controls="faqThree"
+                >
+                  Posso reutilizar os componentes em outras páginas?
+                </button>
+              </h3>
+              <div
+                id="faqThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Sim. Header, hero, depoimentos, FAQ e rodapé seguem um padrão modular para reaproveitamento.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </main>
 {% endblock %}
