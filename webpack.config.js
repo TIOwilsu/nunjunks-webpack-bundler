@@ -1,5 +1,8 @@
 const path = require('path',);
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin',);
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin',);
+const GenerateWebpPlugin = require('./webpack-plugins/generate-webp.plugin.js',);
+
 const {
   SCRIPTS_DIR,
   ASSETS_DIR,
@@ -48,7 +51,16 @@ const config = {
         ],
       },
       {
+        test: /\.svg$/i,
+        include: FONTS_DIR,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name].[hash][ext]',
+        },
+      },
+      {
         test: /\.(png|jpe?g|svg|webp|ico)$/i,
+        exclude: FONTS_DIR,
         oneOf: [
           {
             resourceQuery: /inline/,
@@ -93,6 +105,37 @@ const config = {
       },
     },
   },
+  optimization: {
+    minimizer: [
+      '...',
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['gifsicle', { interlaced: true, },],
+              ['mozjpeg', { quality: 75, progressive: true, },],
+              ['pngquant', { quality: [0.65, 0.85,], speed: 3, },],
+              ['svgo', {},],
+            ],
+          },
+        },
+      },),
+      new ImageMinimizerPlugin({
+        test: /\.webp$/i,
+        minimizer: {
+          implementation: ImageMinimizerPlugin.sharpMinify,
+          options: {
+            encodeOptions: {
+              webp: {
+                quality: 70,
+              },
+            },
+          },
+        },
+      },),
+    ],
+  },
   plugins: [
     new HtmlBundlerPlugin({
       entry: [
@@ -135,6 +178,7 @@ const config = {
         minifyJS: true,
       },
     },),
+    new GenerateWebpPlugin(),
   ],
 };
 
